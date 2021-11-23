@@ -1,19 +1,18 @@
-//   ("aaab") [] k2
 
 var runLengthEncoding = function (str) {
+  console.log(str);
   let k = 1;
   const arr = str.split("").reduce((acc, curr, index, arr) => {
     if (curr === arr[index + 1]) {
       k++;
+    
       return acc;
     }
 
-    //   arr[i] === arr[i-1] k ++
-    let newArr = [...acc, [curr, k]];
+    const newArr = [...acc, [k, curr]];
     k = 1;
     return newArr;
   }, []);
 
-  return [arr]; // << fix this
+  return arr;
 };
-console.log(runLengthEncoding("kaaabb"))
