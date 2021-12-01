@@ -1,22 +1,26 @@
-// var Ball = function (ballType) {};
+var Ball = function (ballType='regular') {
+  this.ballType = ballType;
+
+  this.sayBallType = function () {
+    return this.ballTipe;
+  };
+};
+
 
 class Ball {
-  constructor(ballTipe = "regular") {
-    this.ballTipe = ballTipe;
+  constructor(ballType = "regular") {
+    this.ballType = ballType;
   }
 
-  sayBallTipe() {
-    if (!this.ballTipe) {
-      return "regular";
-    }
-    return this.ballTipe;
+  sayBallType() {
+    return this.ballType;
   }
 }
 
 ball1 = new Ball();
 ball2 = new Ball("super");
 
-console.log(ball1.ballTipe);
+console.log(ball1.ballType);
 
-console.log("%%%%%", ball1.sayBallTipe());
-console.log("$$$$$", ball2.sayBallTipe());
+console.log("%%%%%", ball1.sayBallType());
+console.log("$$$$$", ball2.sayBallType());
